@@ -4,6 +4,7 @@ import { Header } from './components/Header.jsx';
 import { GeneratorForm } from './components/GeneratorForm.jsx';
 import { FileExplorer } from './components/FileExplorer.jsx';
 import { Instructions } from './components/Instructions.jsx';
+import { FaqSection } from './components/FaqSection.jsx';
 import { PresetsModal } from './components/PresetsModal.jsx';
 import { generateThemeFiles, generateThemeZip } from './generator/index.js';
 
@@ -100,6 +101,9 @@ export function App() {
 
         {/* Instructions & CLI Usage */}
         <Instructions slug={tokens.slug} />
+
+        {/* SEO FAQ Section */}
+        <FaqSection />
       </main>
 
       {/* Presets Modal */}
