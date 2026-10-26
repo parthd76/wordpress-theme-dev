@@ -1,0 +1,39 @@
+{
+  "name": "wordpress-theme-dev",
+  "version": "1.0.0",
+  "description": "Clean, modern WordPress Theme Dev starter theme boilerplate generator",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
+    "cli": "node bin/generate.js"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "wordpress-theme-dev",
+    "starter-theme",
+    "generator",
+    "boilerplate"
+  ],
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.2",
+    "lucide-react": "^1.61.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.2",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.5"
+  }
+}
