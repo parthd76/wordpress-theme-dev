@@ -1,26 +1,24 @@
 import React from 'react';
-import { Sparkles, Terminal, Code2, BookOpen, ExternalLink, Globe } from 'lucide-react';
+import { Sparkles, BookOpen, ExternalLink, Globe, Code2 } from 'lucide-react';
 
 export function Header({ onOpenPresets }) {
   return (
-    <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-40">
+    <header className="border-b border-slate-200/80 bg-white/95 backdrop-blur-md sticky top-0 z-40 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-sky-500 to-emerald-400 p-[2px] shadow-lg shadow-indigo-500/20">
-            <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-mono font-black text-sm text-sky-400">
-              WP
-            </div>
+          <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+            WP
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-bold text-lg text-white tracking-tight">WordPress Theme Dev</h1>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                Builder
+              <h1 className="font-bold text-base text-slate-900 tracking-tight">WordPress Theme Dev</h1>
+              <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-200/60">
+                Generator
               </span>
             </div>
-            <p className="text-xs text-slate-400 hidden sm:block">
-              Generate clean, blank boilerplate themes with required files and actions
+            <p className="text-xs text-slate-500 hidden sm:block">
+              Create clean, minimal boilerplate WordPress themes with proper hierarchy
             </p>
           </div>
         </div>
@@ -30,9 +28,9 @@ export function Header({ onOpenPresets }) {
           <button
             type="button"
             onClick={onOpenPresets}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200/80 text-slate-700 border border-slate-200 transition"
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
             <span>Presets</span>
           </button>
 
@@ -40,9 +38,9 @@ export function Header({ onOpenPresets }) {
             href="https://developer.wordpress.org/themes/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 transition"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-200 transition"
           >
-            <BookOpen className="w-3.5 h-3.5 text-sky-400" />
+            <BookOpen className="w-3.5 h-3.5 text-blue-600" />
             <span>WP Handbook</span>
             <ExternalLink className="w-3 h-3 text-slate-400" />
           </a>
@@ -51,11 +49,11 @@ export function Header({ onOpenPresets }) {
             href="https://developer.wordpress.org/themes/basics/template-hierarchy/"
             target="_blank"
             rel="noreferrer"
-            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-indigo-600/10 hover:bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 transition"
+            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-200 transition"
           >
-            <Globe className="w-3.5 h-3.5 text-indigo-400" />
+            <Globe className="w-3.5 h-3.5 text-blue-600" />
             <span>Template Hierarchy</span>
-            <ExternalLink className="w-3 h-3 text-indigo-400/60" />
+            <ExternalLink className="w-3 h-3 text-slate-400" />
           </a>
         </div>
       </div>

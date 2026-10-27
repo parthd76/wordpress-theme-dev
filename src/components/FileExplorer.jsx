@@ -9,8 +9,7 @@ import {
   Image, 
   Search,
   ChevronRight,
-  ChevronDown,
-  CheckCircle2
+  ChevronDown
 } from 'lucide-react';
 
 export function FileExplorer({ files, themeSlug }) {
@@ -59,20 +58,20 @@ export function FileExplorer({ files, themeSlug }) {
   }, [files, searchTerm]);
 
   const getFileIcon = (fileName) => {
-    if (fileName.endsWith('.php')) return <FileCode className="w-4 h-4 text-indigo-400 shrink-0" />;
-    if (fileName.endsWith('.css') || fileName.endsWith('.scss')) return <FileCode className="w-4 h-4 text-pink-400 shrink-0" />;
-    if (fileName.endsWith('.json')) return <FileJson className="w-4 h-4 text-amber-400 shrink-0" />;
-    if (fileName.endsWith('.js')) return <FileCode className="w-4 h-4 text-yellow-400 shrink-0" />;
-    if (fileName.endsWith('.txt')) return <FileText className="w-4 h-4 text-slate-400 shrink-0" />;
-    if (fileName.endsWith('.png') || fileName.endsWith('.jpg')) return <Image className="w-4 h-4 text-emerald-400 shrink-0" />;
-    return <File className="w-4 h-4 text-slate-400 shrink-0" />;
+    if (fileName.endsWith('.php')) return <FileCode className="w-4 h-4 text-blue-600 shrink-0" />;
+    if (fileName.endsWith('.css') || fileName.endsWith('.scss')) return <FileCode className="w-4 h-4 text-pink-600 shrink-0" />;
+    if (fileName.endsWith('.json')) return <FileJson className="w-4 h-4 text-amber-600 shrink-0" />;
+    if (fileName.endsWith('.js')) return <FileCode className="w-4 h-4 text-emerald-600 shrink-0" />;
+    if (fileName.endsWith('.txt')) return <FileText className="w-4 h-4 text-slate-500 shrink-0" />;
+    if (fileName.endsWith('.png') || fileName.endsWith('.jpg')) return <Image className="w-4 h-4 text-teal-600 shrink-0" />;
+    return <File className="w-4 h-4 text-slate-500 shrink-0" />;
   };
 
   const getBadge = (fileName) => {
     const ext = fileName.split('.').pop()?.toUpperCase();
     if (!ext) return null;
     return (
-      <span className="text-[9px] font-semibold tracking-wider px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/60 ml-auto shrink-0">
+      <span className="text-[10px] font-semibold tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200 ml-auto shrink-0">
         {ext}
       </span>
     );
@@ -81,40 +80,40 @@ export function FileExplorer({ files, themeSlug }) {
   const totalFiles = Object.keys(files).length;
 
   return (
-    <div className="flex flex-col h-full bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+    <div className="flex flex-col h-full bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
       {/* Top Header */}
-      <div className="p-4 border-b border-slate-800 bg-slate-900/80 flex items-center justify-between">
+      <div className="p-4 border-b border-slate-200/80 bg-slate-50/70 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Folder className="w-4 h-4 text-sky-400" />
-          <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">
+          <Folder className="w-4 h-4 text-blue-600" />
+          <span className="text-xs font-semibold uppercase tracking-wider text-slate-800">
             Included Theme Files
           </span>
         </div>
-        <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">
-          {totalFiles} files in package
+        <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-semibold">
+          {totalFiles} files
         </span>
       </div>
 
       {/* Search Input */}
-      <div className="p-3 border-b border-slate-800/80 bg-slate-950/40">
+      <div className="p-3 border-b border-slate-200/80 bg-white">
         <div className="relative">
-          <Search className="w-3.5 h-3.5 absolute left-3 top-3 text-slate-500" />
+          <Search className="w-3.5 h-3.5 absolute left-3 top-3 text-slate-400" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search files (e.g. functions, style)..."
-            className="w-full pl-9 pr-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition"
+            placeholder="Search files (e.g. functions, header)..."
+            className="w-full pl-9 pr-3 py-2 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition"
           />
         </div>
       </div>
 
       {/* Tree Content */}
-      <div className="flex-1 overflow-y-auto p-3 text-xs font-mono space-y-1">
+      <div className="flex-1 overflow-y-auto p-3 text-xs font-mono space-y-1 bg-white">
         {/* Theme Root Folder Item */}
-        <div className="flex items-center gap-2 px-2.5 py-1.5 text-slate-400 font-bold select-none bg-slate-950/40 rounded-lg border border-slate-800/60 mb-2">
-          <FolderOpen className="w-4 h-4 text-indigo-400 shrink-0" />
-          <span className="text-white font-semibold">{themeSlug}/</span>
+        <div className="flex items-center gap-2 px-2.5 py-2 text-slate-700 font-bold select-none bg-slate-50 rounded-lg border border-slate-200 mb-2">
+          <FolderOpen className="w-4 h-4 text-blue-600 shrink-0" />
+          <span className="text-slate-900 font-semibold">{themeSlug}/</span>
           <span className="text-[10px] text-slate-500 font-normal ml-auto">root</span>
         </div>
 
@@ -126,19 +125,19 @@ export function FileExplorer({ files, themeSlug }) {
               <button
                 type="button"
                 onClick={() => toggleFolder(folderName)}
-                className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-left text-slate-300 hover:bg-slate-800/60 select-none group transition"
+                className="w-full flex items-center gap-2 px-2 py-1.5 rounded-lg text-left text-slate-700 hover:bg-slate-100 select-none group transition"
               >
                 {isOpen ? (
-                  <ChevronDown className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                  <ChevronDown className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 ) : (
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 )}
                 {isOpen ? (
-                  <FolderOpen className="w-4 h-4 text-sky-400 shrink-0" />
+                  <FolderOpen className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                 ) : (
-                  <Folder className="w-4 h-4 text-sky-400 shrink-0" />
+                  <Folder className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                 )}
-                <span className="font-semibold text-slate-200 group-hover:text-white">
+                <span className="font-semibold text-slate-800 group-hover:text-slate-950">
                   {folderName}/
                 </span>
                 <span className="ml-auto text-[10px] text-slate-500 font-mono">
@@ -147,11 +146,11 @@ export function FileExplorer({ files, themeSlug }) {
               </button>
 
               {isOpen && (
-                <div className="ml-4 pl-2 border-l border-slate-800 space-y-1 mt-1 mb-2">
+                <div className="ml-4 pl-2 border-l border-slate-200 space-y-0.5 mt-1 mb-2">
                   {items.map((item) => (
                     <div
                       key={item.fullPath}
-                      className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-md text-left text-slate-300 hover:text-white hover:bg-slate-800/50 transition select-none group"
+                      className="w-full flex items-center gap-2 px-2 py-1.5 rounded-md text-left text-slate-600 hover:text-slate-950 hover:bg-slate-50 transition select-none group"
                     >
                       {getFileIcon(item.fileName)}
                       <span className="truncate">{item.subpath}</span>
@@ -165,11 +164,11 @@ export function FileExplorer({ files, themeSlug }) {
         })}
 
         {/* Root Files */}
-        <div className="ml-2 pl-2 border-l border-slate-800 space-y-1 mt-2">
+        <div className="ml-2 pl-2 border-l border-slate-200 space-y-0.5 mt-2">
           {tree.files.map((file) => (
             <div
               key={file}
-              className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-md text-left text-slate-300 hover:text-white hover:bg-slate-800/50 transition select-none group"
+              className="w-full flex items-center gap-2 px-2 py-1.5 rounded-md text-left text-slate-600 hover:text-slate-950 hover:bg-slate-50 transition select-none group"
             >
               {getFileIcon(file)}
               <span className="truncate">{file}</span>

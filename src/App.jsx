@@ -68,12 +68,12 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
       <Header onOpenPresets={() => setIsPresetsOpen(true)} />
 
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-medium text-xs shadow-xl shadow-indigo-600/30 flex items-center gap-2 animate-bounce">
+        <div className="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-slate-900 text-white font-medium text-xs shadow-lg flex items-center gap-2 animate-bounce">
           <span>{toastMessage}</span>
         </div>
       )}
@@ -81,7 +81,7 @@ export function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Generator Form */}
-          <div className="lg:col-span-7 bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl">
+          <div className="lg:col-span-7 bg-white border border-slate-200/80 p-6 sm:p-8 rounded-2xl shadow-sm">
             <GeneratorForm
               formData={formData}
               onChange={handleFormChange}
@@ -114,10 +114,15 @@ export function App() {
       />
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-900/40 py-6 mt-12 text-center text-xs text-slate-500">
-        <p>
-          WordPress Theme Dev — Clean, Modern Starter Theme Boilerplate Generator. Licensed under GPL-2.0-or-later.
-        </p>
+      <footer className="border-t border-slate-200/80 bg-white py-8 mt-16 text-center text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 space-y-1">
+          <p className="font-medium text-slate-700">
+            WordPress Theme Dev — Clean, Modern Starter Theme Boilerplate Generator
+          </p>
+          <p>
+            Licensed under GPL-2.0-or-later. Built for professional WordPress theme developers.
+          </p>
+        </div>
       </footer>
     </div>
   );

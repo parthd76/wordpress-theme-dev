@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown, ChevronUp, Sparkles, CheckCircle2 } from 'lucide-react';
+import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -32,12 +32,17 @@ export function FaqSection() {
   };
 
   return (
-    <section className="mt-12 border border-slate-800 rounded-2xl bg-slate-900/40 p-6 sm:p-8 space-y-6">
+    <section className="mt-10 border border-slate-200/80 rounded-2xl bg-white p-6 sm:p-8 shadow-sm space-y-6">
       <div className="flex items-center gap-2.5">
-        <HelpCircle className="w-5 h-5 text-indigo-400" />
-        <h2 className="text-lg font-bold text-white tracking-tight">
-          Frequently Asked Questions &amp; WordPress Theme Guide
-        </h2>
+        <div className="p-1.5 rounded-lg bg-blue-50 text-blue-600">
+          <HelpCircle className="w-4 h-4" />
+        </div>
+        <div>
+          <h2 className="text-base font-bold text-slate-900 tracking-tight">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xs text-slate-500">Everything you need to know about developing with WordPress starter themes</p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -46,21 +51,21 @@ export function FaqSection() {
           return (
             <div
               key={index}
-              className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700/80 transition cursor-pointer"
+              className="p-4 sm:p-5 rounded-xl bg-slate-50/70 border border-slate-200/80 hover:border-slate-300 hover:bg-slate-50 transition cursor-pointer select-none"
               onClick={() => toggle(index)}
             >
               <div className="flex items-center justify-between gap-3">
-                <h3 className="text-sm font-semibold text-slate-200">
+                <h3 className="text-sm font-semibold text-slate-900">
                   {faq.q}
                 </h3>
                 {isOpen ? (
-                  <ChevronUp className="w-4 h-4 text-slate-400 shrink-0" />
+                  <ChevronUp className="w-4 h-4 text-slate-500 shrink-0" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
+                  <ChevronDown className="w-4 h-4 text-slate-500 shrink-0" />
                 )}
               </div>
               {isOpen && (
-                <p className="mt-3 text-xs text-slate-400 leading-relaxed border-t border-slate-800/80 pt-3">
+                <p className="mt-3 text-xs text-slate-600 leading-relaxed border-t border-slate-200/80 pt-3">
                   {faq.a}
                 </p>
               )}
