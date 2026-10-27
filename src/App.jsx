@@ -59,6 +59,17 @@ export function App() {
       const { blob, filename } = await generateThemeZip(formData);
       saveAs(blob, filename);
       showToast(`Downloaded ${filename} successfully!`);
+
+      // Track theme download event in Google Analytics
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_theme', {
+          theme_name: formData.name,
+          theme_slug: tokens.slug,
+          theme_type: formData.themeType,
+          has_woocommerce: formData.includeWooCommerce,
+          has_sass: formData.includeSass,
+        });
+      }
     } catch (err) {
       console.error('Error generating theme zip:', err);
       showToast('Error packaging theme zip');
